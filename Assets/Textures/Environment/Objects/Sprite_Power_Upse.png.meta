@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 4a2dd3e77d3360449adda8567340a56d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sprite_Power_Upse_5
+    21300002: Sprite_Power_Upse_13
+    21300004: Sprite_Power_Upse_14
+    21300006: Sprite_Power_Upse_15
+    21300008: Sprite_Power_Upse_16
+    21300010: Sprite_Power_Upse_17
+    21300012: Sprite_Power_Upse_18
+    21300014: Sprite_Power_Upse_19
+    21300016: Sprite_Power_Upse_20
+    21300018: Sprite_Power_Upse_21
+    21300020: Sprite_Power_Upse_22
+    21300022: Sprite_Power_Upse_23
+    21300024: Sprite_Power_Upse_12
+    21300026: Sprite_Power_Upse_13
+    21300028: Sprite_Power_Upse_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sprite_Power_Upse_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 557
+        width: 112
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 426
+        width: 112
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_14
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 479
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_15
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 276
+        width: 118
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 276
+        width: 119
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_17
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 276
+        width: 119
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_18
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 265
+        width: 141
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_19
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 25
+        width: 68
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_20
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 28
+        width: 68
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_21
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 28
+        width: 68
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 145
+        width: 110
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_23
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 25
+        width: 98
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 479
+        width: 137
+        height: 184
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 478
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sprite_Power_Upse_14
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 479
+        width: 152
+        height: 193
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
