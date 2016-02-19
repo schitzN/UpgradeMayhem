@@ -15,6 +15,18 @@ public class StatTracker : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+        // TODO: add stats
+        /*
+        public float _totalhealth;
+        public float _healthregen;
+        public float _armor;
+        public float _lengthofsight;
+        public float _accuracy;
+        public float _strength;
+        public int _scoremultiplier;
+        */
+
         // add stats
         this._stats.Add(new Stat("Health", GameObject.Find("HealthLabel").GetComponent<Text>(), GameObject.Find("BtnHealthText").GetComponent<Text>(), 1, 10, 1, 1, 1));
         this._stats.Add(new Stat("BpS", GameObject.Find("BpSLabel").GetComponent<Text>(), GameObject.Find("BtnBpSText").GetComponent<Text>(), 0.5f, 10f, 0.05f, 1, 1));

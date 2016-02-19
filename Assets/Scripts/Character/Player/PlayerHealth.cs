@@ -5,8 +5,12 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     private StatTracker _ts;
+
     private Text _healthText;
-    private int _curHealth;
+
+    // CURRENT
+    private float _curHealth;
+
 
     // Use this for initialization
     void Start()
@@ -24,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void HitPlayer(int dmg)
+    public void HitPlayer(float dmg)
     {
         this._curHealth -= dmg;
         this._healthText.text = "Health: " + this._curHealth + " / " + (int)this._ts.GetStat("Health").GetCur();

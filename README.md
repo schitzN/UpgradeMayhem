@@ -21,11 +21,14 @@ TODO: Write usage instructions
 ## History
 
 TODO: Weapon sys
+	- different attack types melee, ranged (magic, ...)
+	- weapon slots
+	- switch slots
 
 TODO: Enemy wave sys
-	- Miniboss at each 5th lvl
-	- Boss at each 10th lvl
-	- Supreme boss at each 100th lvl
+	- Danger wave at each 5th lvl (=higher chance of rare enemies)
+	- Danger wave WITH Boss at each 10th lvl
+	- Danger wave WITH Supreme boss at each 100th lvl
 	- Death resets you to last checkpoint (every 5th lvl)
 	- Every 100th level new area -> new enemies, new terrain
 TODO: GUI

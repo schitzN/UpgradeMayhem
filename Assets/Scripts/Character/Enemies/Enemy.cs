@@ -10,7 +10,20 @@ public class Enemy : MonoBehaviour
     public int _totalHealth;
     public int _moneyWorth;
     public float _movementSpeed;
-    public int _damage;
+    public float _damage;
+    public float _knockbackResistance;
+    public float _meleeResistance;
+    public float _rangedResistance;
+
+    // CHANCES
+    public float _chanceOfArtifact;
+    public float _chanceOfItem;
+    public float _chanceOfRare;
+
+    // TODO: implement enemy types
+    // ENEMY TYPE
+    //private Enemytype _enemyType;
+    //public bool _deflectionClickable;
 
     // CURRENT
     private float _curHealth;
@@ -29,7 +42,7 @@ public class Enemy : MonoBehaviour
         this.UpdateMovement();
         this.UpdateHealth();
     }
-    
+        
     private void UpdateMovement()
     {
         this.transform.position = new Vector3(this.transform.position.x - Time.deltaTime * this._movementSpeed, this.transform.position.y, this.transform.position.z);
@@ -53,8 +66,10 @@ public class Enemy : MonoBehaviour
         }
     }
     
-    public void HitEnemy(int dmg)
+    public void HitEnemy(float dmg)
     {
+        // TODO:  Resistance checker for weapons
+
         this._curHealth -= dmg;
         
         Vector3 scale = this._healthBar.transform.localScale;
