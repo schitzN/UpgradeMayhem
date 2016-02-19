@@ -4,11 +4,9 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour
 {
-	
     private float _bulletTime = 0;
     private float _curTime = 0;
 
-    private StatTracker _st;
     private Magazin _mag;
     
     private EnemySpawner _spawner;
@@ -16,10 +14,9 @@ public class Shoot : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        this._st = GameObject.Find("StatTracker").GetComponent<StatTracker>();
         this._mag = GameObject.Find("TheDude").GetComponent<Magazin>();
 
-        this._bulletTime = 1f / this._st.GetStat("BpS").GetCur();
+        this._bulletTime = 1f / StatsManager.Instance.GetStat("BpS").GetCur();
         
         this._spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
     }
@@ -29,7 +26,7 @@ public class Shoot : MonoBehaviour
     {
         if (this._mag.GetNumBullets() > 0 && this._spawner.GetWaveRunning())
         {
-            this._bulletTime = 1f / this._st.GetStat("BpS").GetCur();
+            this._bulletTime = 1f / StatsManager.Instance.GetStat("BpS").GetCur();
             this._curTime += Time.deltaTime;
 
             if (this._curTime >= this._bulletTime)

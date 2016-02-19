@@ -6,8 +6,8 @@ public class Stat
 {
     // UI
     private string _name;
-    private Text _txt;
-    private Text _btnTxt;
+    //private Text _txt;
+    //private Text _btnTxt;
 
     // stat
     private float _cur;
@@ -18,11 +18,11 @@ public class Stat
     private float _cost;
     private float _mod;
 
-    public Stat(string name, Text txt, Text btnTxt, float cur, float max, float step, int cost, float mod)
+    public Stat(string name, float cur, float max, float step, int cost, float mod)
     {
         this._name = name;
-        this._txt = txt;
-        this._btnTxt = btnTxt;
+        //this._txt = txt;
+        //this._btnTxt = btnTxt;
 
         this._cur = cur;
         this._max = max;
@@ -64,17 +64,17 @@ public class Stat
         {
             this._cur += this._step;
             this._cost += this._mod;
-            this.UpdateLabel();
+            //this.UpdateLabel();
 
             return true;
         }
 
         return false;
     }
-
+    /*
     public void UpdateLabel()
     {
         this._txt.text = this._name + ": " + this._cur.ToString("0.00");
         this._btnTxt.text = "Costs: " + this._cost.ToString("0.0");
-    }
+    }*/
 }
