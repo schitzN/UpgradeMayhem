@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private bool _roundRunning = false;
     private Text _warmupTimer;
     private Text _warmupWave;
-    
+
     // WAVE
     private List<Enemy> _enemies;
     private int _wave = 0;
@@ -66,6 +66,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (this._leftSpawn > 0)
             {
+                // what wave count?
+
+                // what enemy type?
+   
+                // for each enemy find rarity, items & artifacts
+
                 // spawn creep
                 GameObject creep = Instantiate(Resources.Load("Enemies/0")) as GameObject;
                 creep.transform.position = this.transform.position;
@@ -88,7 +94,7 @@ public class EnemySpawner : MonoBehaviour
     {
         this._kills = 0;
         this._wave++;
-        this._maxSpawn = this._wave;
+        this._maxSpawn = this._wave*2;
         this._leftSpawn = this._maxSpawn;
         
         this._waveText.text = "Wave: " + this._wave.ToString();
