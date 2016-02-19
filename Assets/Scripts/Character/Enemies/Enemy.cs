@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     {
         if (this._curHealth <= 0)
         {
-            GameObject.Find("StatTracker").GetComponent<StatTracker>().AddMoney(this._moneyWorth);
+            StatsManager.Instance.AddMoney(this._moneyWorth);
             this._spawner.RemoveEnemy(this);
             Destroy(this.gameObject);
         }
