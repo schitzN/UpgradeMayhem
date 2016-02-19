@@ -47,8 +47,10 @@ public class TabsManager : Singleton<TabsManager> {
 
                 for(int i = 0; i < StatsManager.Instance.GetStats().Count; i++)
                 {
-                    GameObject ele = this.CreateUIElement("Stat" + StatsManager.Instance.GetStats()[i].GetName(), "UI/ElementUpgradeables", content.FindChild("Panel" + (i % content.childCount)));
-                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetStats()[i].GetName();
+                    GameObject ele = this.CreateUIElement(StatsManager.Instance.GetStats()[i].GetName(), "UI/ElementUpgradeables", content.FindChild("Panel" + (i % content.childCount)));
+                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetStats()[i].GetName() + ": " + StatsManager.Instance.GetStats()[i].GetCur();
+                    ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetStats()[i].GetCost() +"";
+                    ele.transform.FindChild("Button").GetComponent<Button>().onClick.AddListener(delegate { StatsManager.Instance.UpgradeStat(ele.name); });
                 }
                 //cont.transform.FindChild("Panel1")
                 break;
