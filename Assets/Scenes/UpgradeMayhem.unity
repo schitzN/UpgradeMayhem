@@ -630,6 +630,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258d9a2a4c46aa44f91c0859a5a55290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heroStats:
+  - _name: Health
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1.5
+  - _name: Health Regeneration
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1.5
+  - _name: Sight
+    _cur: 0.2
+    _max: 1
+    _step: 0.01
+    _cost: 1
+    _mod: 1
+  - _name: Strength
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1
+  - _name: Accuracy
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1
+  - _name: Score Multiplier
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1
+  - _name: Gold Multiplier
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1
+  - _name: Chris is geil
+    _cur: 1
+    _max: 10
+    _step: 1
+    _cost: 1
+    _mod: 1
+  _meleeWeapons:
+  - _name: Fists
+    _isUnlocked: 1
+    _cost: 0
+    _stats:
+    - _name: Damage
+      _cur: 1
+      _max: 5
+      _step: 1
+      _cost: 1
+      _mod: 1
+    - _name: 
+      _cur: 0
+      _max: 0
+      _step: 0
+      _cost: 0
+      _mod: 0
+    - _name: 
+      _cur: 0
+      _max: 0
+      _step: 0
+      _cost: 0
+      _mod: 0
+  - _name: Baseball Bat
+    _isUnlocked: 0
+    _cost: 0
+    _stats: []
+  - _name: Sword
+    _isUnlocked: 0
+    _cost: 0
+    _stats: []
+  _rangedWeapons:
+  - _name: Stone
+    _isUnlocked: 0
+    _cost: 0
+    _stats: []
+  - _name: Pistol
+    _isUnlocked: 0
+    _cost: 0
+    _stats: []
 --- !u!1 &536166318
 GameObject:
   m_ObjectHideFlags: 0

@@ -80,11 +80,11 @@ public class TabsManager : Singleton<TabsManager> {
     private bool initWeaponButton(Transform parent, Weapon w)
     {
         GameObject ele = this.CreateUIElement(w.GetName(), "UI/ElementWeapons", parent);
-        ele.transform.FindChild("Label").GetComponent<Text>().text = w.GetName() + ": " + w.GetCur();
+        ele.transform.FindChild("Label").GetComponent<Text>().text = w.GetName();
         ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = w.GetCost() + "";
         ele.transform.FindChild("Image").GetComponent<Image>().sprite = StatsManager.Instance.GetSprite("Ico" + ele.name);
 
-        if (w._isUnlocked)
+        if (w.GetWeaponUnlocked())
         {
             ele.transform.FindChild("Button").gameObject.SetActive(false);
         }

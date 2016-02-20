@@ -13,7 +13,7 @@ public class Magazin : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        this._bullets = (int)StatsManager.Instance.GetStat("MagSize").GetCur();
+        //this._bullets = (int)StatsManager.Instance.GetStat("MagSize").GetCur();
         this._magText = GameObject.Find("Magazin").GetComponent<Text>();
         this._reloadText = GameObject.Find("Reload").GetComponent<Text>();
 
@@ -24,7 +24,8 @@ public class Magazin : MonoBehaviour
     void Update()
     {
         // mag empty
-        if (this._bullets <= 0)
+        // TODO: RELOAD WEAPON DEPENDING
+        /*if (this._bullets <= 0)
         {
             this._reloadT += Time.deltaTime;
             this._reloadText.text = "Reload: " + (StatsManager.Instance.GetStat("ReloadTime").GetCur() - this._reloadT).ToString("0.00");
@@ -37,7 +38,7 @@ public class Magazin : MonoBehaviour
                 this._reloadText.text = "Reload: 0";
                 this._magText.text = "Magazin: " + this._bullets + " / " + (int)StatsManager.Instance.GetStat("MagSize").GetCur();
             }
-        }
+        }*/
     }
 
     public void RemoveBullet()
@@ -48,7 +49,7 @@ public class Magazin : MonoBehaviour
 
     public void UpdateMagSizeLabel()
     {
-        this._magText.text = "Magazin: " + this._bullets + " / " + (int)StatsManager.Instance.GetStat("MagSize").GetCur();
+        //this._magText.text = "Magazin: " + this._bullets + " / " + (int)StatsManager.Instance.GetStat("MagSize").GetCur();
     }
 
     public int GetNumBullets()

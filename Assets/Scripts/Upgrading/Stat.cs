@@ -1,21 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+[Serializable]
 public class Stat
 {
     // UI
+    [SerializeField]
     private string _name;
-    //private Text _txt;
-    //private Text _btnTxt;
 
     // stat
+    [SerializeField]
     private float _cur;
+    [SerializeField]
     private float _max;
+    [SerializeField]
     private float _step;
 
     // cost
+    [SerializeField]
     private float _cost;
+    [SerializeField]
     private float _mod;
 
     public Stat(string name, float cur, float max, float step, int cost, float mod)

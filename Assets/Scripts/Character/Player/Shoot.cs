@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour
     {
         this._mag = GameObject.Find("TheDude").GetComponent<Magazin>();
 
-        this._bulletTime = 1f / StatsManager.Instance.GetStat("BpS").GetCur();
+        //this._bulletTime = 1f / StatsManager.Instance.GetStat("BpS").GetCur();
         
         this._spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
     }

@@ -10,10 +10,13 @@ public class StatsManager : Singleton<StatsManager>
     private Text _moneyText;
 
     // STATS
+    [SerializeField]
     private List<Stat> _heroStats = new List<Stat>();
 
     // WEAPONS
+    [SerializeField]
     private List<Weapon> _meleeWeapons = new List<Weapon>();
+    [SerializeField]
     private List<Weapon> _rangedWeapons = new List<Weapon>();
 
     private int _availableSlots = 1;
@@ -30,7 +33,7 @@ public class StatsManager : Singleton<StatsManager>
         this._weaponSlotsContainer = GameObject.Find("WeaponSlots");
 
         // add stats
-        this._heroStats.Add(new Stat("Health", 1, 10, 1, 1, 1));
+        /*this._heroStats.Add(new Stat("Health", 1, 10, 1, 1, 1));
         this._heroStats.Add(new Stat("Health Regeneration", 1, 10, 1, 1, 1));
         this._heroStats.Add(new Stat("Sight", 0.2f, 1f, 0.01f, 1, 1));
         this._heroStats.Add(new Stat("Strength", 1, 10, 1, 1, 1));
@@ -45,17 +48,17 @@ public class StatsManager : Singleton<StatsManager>
         this._heroStats.Add(new Stat("Recoil", 0, 1f, 0.05f, 1, 1));
         this._heroStats.Add(new Stat("BulletSpeed", 5f, 30f, 0.5f, 1, 1));
         this._heroStats.Add(new Stat("MagSize", 5, 100, 1, 1, 1));
-        this._heroStats.Add(new Stat("ReloadTime", 2f, -0.5f, -0.05f, 1, 1));
+        this._heroStats.Add(new Stat("ReloadTime", 2f, -0.5f, -0.05f, 1, 1));*/
 
         // add melee weapons
-        this._meleeWeapons.Add(new Weapon("Fists", 0.5f, 2.5f, 0.25f, 1, 1));
+        /*this._meleeWeapons.Add(new Weapon("Fists", 0.5f, 2.5f, 0.25f, 1, 1));
         this._meleeWeapons[0]._isUnlocked = true;
         this._meleeWeapons.Add(new Weapon("Baseball Bat", 1, 5, 0.25f, 1, 1));
         this._meleeWeapons.Add(new Weapon("Sword", 1, 10, 0.5f, 1, 1));
 
         // add ranged weapons
         this._rangedWeapons.Add(new Weapon("Stone", 0.5f, 2.5f, 0.25f, 1, 1));
-        this._rangedWeapons.Add(new Weapon("Pistol", 1, 5, 0.25f, 1, 1));
+        this._rangedWeapons.Add(new Weapon("Pistol", 1, 5, 0.25f, 1, 1));*/
 
         // setup weapons
         for (int i = 0; i < this._availableSlots; i++)
