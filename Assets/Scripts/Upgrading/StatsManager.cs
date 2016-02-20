@@ -16,6 +16,7 @@ public class StatsManager : Singleton<StatsManager>
     private List<Weapon> _meleeWeapons = new List<Weapon>();
     private List<Weapon> _rangedWeapons = new List<Weapon>();
 
+    private int _availableSlots = 4;
     private List<Weapon> _activeSlots = new List<Weapon>();
 
     // Use this for initialization
@@ -50,6 +51,14 @@ public class StatsManager : Singleton<StatsManager>
 
         // setup default
         this._activeSlots.Add(this._rangedWeapons[0]);
+
+        for (int i = 0; i < this._availableSlots - 1; i++)
+            this._activeSlots.Add(null);
+
+        
+
+
+
         this._moneyText = GameObject.Find("MoneyLabel").GetComponent<Text>();
         this.UpdateAllLabels();
     }
@@ -68,7 +77,7 @@ public class StatsManager : Singleton<StatsManager>
             if(w.GetName().Equals(name))
                 wpn = w;
 
-        if(wpn != null)
+        if(wpn == null)
             foreach (Weapon w in this._rangedWeapons)
                 if (w.GetName().Equals(name))
                     wpn = w;
