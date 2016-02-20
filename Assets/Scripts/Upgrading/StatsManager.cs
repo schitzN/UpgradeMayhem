@@ -16,6 +16,8 @@ public class StatsManager : Singleton<StatsManager>
     private List<Weapon> _meleeWeapons = new List<Weapon>();
     private List<Weapon> _rangedWeapons = new List<Weapon>();
 
+    private List<Weapon> _activeSlots = new List<Weapon>();
+
     // Use this for initialization
     void Start()
     {
@@ -46,7 +48,8 @@ public class StatsManager : Singleton<StatsManager>
         this._rangedWeapons.Add(new Weapon("Stone", 0.5f, 2.5f, 0.25f, 1, 1));
         this._rangedWeapons.Add(new Weapon("Spicked Ball", 1, 5, 0.25f, 1, 1));
 
-        //
+        // setup default
+        this._activeSlots.Add(this._rangedWeapons[0]);
         this._moneyText = GameObject.Find("MoneyLabel").GetComponent<Text>();
         this.UpdateAllLabels();
     }
@@ -55,6 +58,26 @@ public class StatsManager : Singleton<StatsManager>
     void Update()
     {
 		
+    }
+
+    public void UpdateWeaponSlot(int index, string name)
+    {
+        Weapon wpn = null;
+
+        foreach(Weapon w in this._meleeWeapons)
+            if(w.GetName().Equals(name))
+                wpn = w;
+
+        if(wpn != null)
+            foreach (Weapon w in this._rangedWeapons)
+                if (w.GetName().Equals(name))
+                    wpn = w;
+
+        if (this._activeSlots[index] != null)
+            this._activeSlots.RemoveAt(index);
+
+        this._activeSlots.Insert(index, wpn);
+        Debug.Log("set " + wpn.GetName() + " active on slot " + index);
     }
 
     public float getMoney()

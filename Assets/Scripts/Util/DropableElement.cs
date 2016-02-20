@@ -18,11 +18,14 @@ public class DropableElement : MonoBehaviour, IDropHandler
     #region IDropHandler implementation
     public void OnDrop(PointerEventData eventData)
     {
+        Debug.Log("DROP");
         if (!item)
         {
-            DragHelper.itemBeingDragged.transform.SetParent(transform);
-            ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
+            //DragHelper.itemBeingDragged.transform.SetParent(transform);
+            //ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
         }
+        Debug.Log(this.transform.GetSiblingIndex() + ", " + DragHelper.itemBeingDragged.name);
+        StatsManager.Instance.UpdateWeaponSlot(this.transform.GetSiblingIndex(), DragHelper.itemBeingDragged.name);
     }
     #endregion
 }

@@ -19,14 +19,13 @@ public class DragHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         startPosition = transform.position;
         startParent = transform.parent;
-        Debug.Log(startParent);
+
         if(startParent.childCount > 1)
         {
             for(int i = 0; i < startParent.childCount; i++)
             {
-                if(startParent.GetChild(i) == this)
+                if (startParent.GetChild(i).gameObject == this.gameObject)
                 {
-                    Debug.Log(startParent.GetChild(i));
                     this.startIndex = i;
                     break;
                 }
@@ -35,7 +34,6 @@ public class DragHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
 
-        Debug.Log("BEGIN");
         this.transform.SetParent(GameObject.Find("Canvas").transform);
     }
 
@@ -51,7 +49,7 @@ public class DragHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         ((RectTransform)transform).position = currentPosition;
 
         //transform.position = Input.mousePosition;
-        Debug.Log("drag " + eventData.position + ", " + ((RectTransform)transform).position);
+        //Debug.Log("drag " + eventData.position + ", " + ((RectTransform)transform).position);
     }
 
     #endregion
@@ -62,17 +60,14 @@ public class DragHelper : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         itemBeingDragged = null;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        //GetComponent<LayoutElement>().ignoreLayout = false;
-        this.transform.SetParent(this.startParent);
 
-        if(this.startIndex != -1)
-            this.transform.SetSiblingIndex(this.startIndex);
-
-        Debug.Log(this.startIndex + ", " + this.transform.GetSiblingIndex());
-
-        if (transform.parent == startParent)
+        if (transform.parent == startParent || transform.parent == GameObject.Find("Canvas").transform)
         {
-            
+            this.transform.SetParent(this.startParent);
+
+            if (this.startIndex != -1)
+                this.transform.SetSiblingIndex(this.startIndex);
+
             transform.position = startPosition;
         }
     }

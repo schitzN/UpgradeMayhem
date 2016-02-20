@@ -241,7 +241,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 32d3e11034897c64ab8c7a46c6058906, type: 3}
+    m_Font: {fileID: 12800000, guid: 3e141c324fc8bc5499e16446a8eb142f, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -437,7 +437,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169894}
   m_Enabled: 1
-  m_Alpha: 0.5
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -450,12 +450,12 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Alpha
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 32d3e11034897c64ab8c7a46c6058906,
+      objectReference: {fileID: 12800000, guid: 3e141c324fc8bc5499e16446a8eb142f,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
