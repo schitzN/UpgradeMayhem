@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6672438846efe174bbee8aa231492e89
-timeCreated: 1455934381
+timeCreated: 1455960591
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -101,7 +101,7 @@ TextureImporter:
         height: 109
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 48, y: 31, z: 48, w: 21}
+      border: {x: 56, y: 35, z: 55, w: 29}
       outline:
       - - {x: 146, y: 54.5}
         - {x: 91, y: 54.5}
@@ -45523,7 +45523,7 @@ TextureImporter:
         height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 25, y: 25, z: 25, w: 25}
+      border: {x: 3, y: 3, z: 3, w: 3}
       outline:
       - - {x: -25, y: 25}
         - {x: -25, y: -25}
