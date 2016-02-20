@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6672438846efe174bbee8aa231492e89
-timeCreated: 1455963443
+timeCreated: 1455966282
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,17 +16,17 @@ TextureImporter:
     21300018: GUI_Sprites_9
     21300020: GUI_Sprites_10
     21300022: GUI_Sprites_11
-    21300024: GUI_Sprites_21
+    21300024: IcoFists
     21300026: GUI_Sprites_27
     21300028: GUI_Sprites_28
     21300030: GUI_Sprites_12
     21300032: GUI_Sprites_13
-    21300034: GUI_Sprites_14
+    21300034: IcoBaseball Bat
     21300036: GUI_Sprites_15
     21300038: GUI_Sprites_16
-    21300040: GUI_Sprites_17
-    21300042: GUI_Sprites_18
-    21300044: GUI_Sprites_19
+    21300040: IcoPistol
+    21300042: IcoStone
+    21300044: IcoSword
     21300046: GUI_Sprites_20
     21300048: GUI_Sprites_22
     21300050: GUI_Sprites_23
@@ -18420,7 +18420,7 @@ TextureImporter:
         - {x: 15.5, y: -50}
         - {x: 34.5, y: -38}
         - {x: 34.5, y: -27}
-    - name: GUI_Sprites_14
+    - name: IcoBaseball Bat
       rect:
         serializedVersion: 2
         x: 887
@@ -22307,7 +22307,7 @@ TextureImporter:
         - {x: -20, y: -20}
         - {x: 20, y: -20}
         - {x: 20, y: 20}
-    - name: GUI_Sprites_17
+    - name: IcoPistol
       rect:
         serializedVersion: 2
         x: 857
@@ -26784,7 +26784,7 @@ TextureImporter:
         - {x: 113, y: -52.5}
         - {x: 127, y: -54.5}
         - {x: 146, y: -54.5}
-    - name: GUI_Sprites_18
+    - name: IcoStone
       rect:
         serializedVersion: 2
         x: 914
@@ -31580,7 +31580,7 @@ TextureImporter:
         - {x: 113, y: -52.5}
         - {x: 127, y: -54.5}
         - {x: 146, y: -54.5}
-    - name: GUI_Sprites_19
+    - name: IcoSword
       rect:
         serializedVersion: 2
         x: 943
@@ -36706,7 +36706,7 @@ TextureImporter:
         - {x: 113, y: -52.5}
         - {x: 127, y: -54.5}
         - {x: 146, y: -54.5}
-    - name: GUI_Sprites_21
+    - name: IcoFists
       rect:
         serializedVersion: 2
         x: 818

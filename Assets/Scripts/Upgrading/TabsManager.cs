@@ -48,35 +48,53 @@ public class TabsManager : Singleton<TabsManager> {
                 for(int i = 0; i < StatsManager.Instance.GetStats().Count; i++)
                 {
                     GameObject ele = this.CreateUIElement(StatsManager.Instance.GetStats()[i].GetName(), "UI/ElementUpgradeables", content.FindChild("Panel" + (i % content.childCount)));
-                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetStats()[i].GetName() + ": " + StatsManager.Instance.GetStats()[i].GetCur();
-                    ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetStats()[i].GetCost() +"";
-                    ele.transform.FindChild("Button").GetComponent<Button>().onClick.AddListener(delegate { StatsManager.Instance.UpgradeStat(ele.name); });
+
+                    this.UpdateUpgradeableBtn(ele, StatsManager.Instance.GetStats()[i]);
+
+                    ele.GetComponent<Button>().onClick.AddListener(delegate { StatsManager.Instance.UpgradeStat(ele, ele.name); });
                 }
                 break;
             case "Weapons":
                 GameObject cont2 = this.CreateUIElement("Container" + name, "UI/ContentColCol2Col", this._contentContainer.transform);
 
+                // create melee weapons
                 Transform contentMelee = cont2.transform.FindChild("Scroller0/Viewport/Content");
 
                 for (int i = 0; i < StatsManager.Instance.GetMeleeWeapons().Count; i++)
-                {
-                    GameObject ele = this.CreateUIElement(StatsManager.Instance.GetMeleeWeapons()[i].GetName(), "UI/ElementWeapons", contentMelee.FindChild("Panel0"));
-                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetMeleeWeapons()[i].GetName() + ": " + StatsManager.Instance.GetMeleeWeapons()[i].GetCur();
-                    ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetMeleeWeapons()[i].GetCost() + "";
-                }
+                    if (this.initWeaponButton(contentMelee.FindChild("Panel0").transform, StatsManager.Instance.GetMeleeWeapons()[i]))
+                        break;
 
+                // create ranged weapons
                 Transform contentRanged = cont2.transform.FindChild("Scroller1/Viewport/Content");
 
                 for (int i = 0; i < StatsManager.Instance.GetRangedWeapons().Count; i++)
-                {
-                    GameObject ele = this.CreateUIElement(StatsManager.Instance.GetRangedWeapons()[i].GetName(), "UI/ElementWeapons", contentRanged.FindChild("Panel0"));
-                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetRangedWeapons()[i].GetName() + ": " + StatsManager.Instance.GetRangedWeapons()[i].GetCur();
-                    ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetRangedWeapons()[i].GetCost() + "";
-                }
+                    if (this.initWeaponButton(contentRanged.FindChild("Panel0").transform, StatsManager.Instance.GetRangedWeapons()[i]))
+                        break;
+
                 break;
             default:
                 break;
         }
+    }
+
+    private bool initWeaponButton(Transform parent, Weapon w)
+    {
+        GameObject ele = this.CreateUIElement(w.GetName(), "UI/ElementWeapons", parent);
+        ele.transform.FindChild("Label").GetComponent<Text>().text = w.GetName() + ": " + w.GetCur();
+        ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = w.GetCost() + "";
+        ele.transform.FindChild("Image").GetComponent<Image>().sprite = StatsManager.Instance.GetSprite("Ico" + ele.name);
+
+        if (w._isUnlocked)
+        {
+            ele.transform.FindChild("Button").gameObject.SetActive(false);
+        }
+        else
+        {
+            ele.GetComponent<DragHelper>().enabled = false;
+            return true; // only show next weapon to buy
+        }
+
+        return false;
     }
 
     private GameObject CreateUIElement(string name, string prefabPath, Transform parent)
@@ -87,5 +105,13 @@ public class TabsManager : Singleton<TabsManager> {
         go.transform.SetParent(parent, false);
 
         return go;
+    }
+
+    public void UpdateUpgradeableBtn(GameObject btn, Stat stat)
+    {
+        btn.transform.FindChild("LabelName").GetComponent<Text>().text = stat.GetName();
+        btn.transform.FindChild("LabelCurrent").GetComponent<Text>().text = stat.GetCur() + "";
+        btn.transform.FindChild("LabelCost").GetComponent<Text>().text = "$ " + stat.GetCost();
+        btn.transform.FindChild("LabelAmount").GetComponent<Text>().text = "+" + stat.GetStep();
     }
 }

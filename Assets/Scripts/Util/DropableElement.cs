@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
 
@@ -18,16 +19,15 @@ public class DropableElement : MonoBehaviour, IDropHandler
     #region IDropHandler implementation
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("DROP");
-        if (!item)
-        {
-            //DragHelper.itemBeingDragged.transform.SetParent(transform);
-            //ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
-        }
-        Debug.Log(this.transform.GetSiblingIndex() + ", " + DragHelper.itemBeingDragged.name);
-        StatsManager.Instance.UpdateWeaponSlot(this.transform.GetSiblingIndex(), DragHelper.itemBeingDragged.name);
+        this.SetCurrentItem(DragHelper.itemBeingDragged.name);
     }
     #endregion
+
+    public void SetCurrentItem(string name)
+    {
+        StatsManager.Instance.UpdateWeaponSlot(this.transform.GetSiblingIndex(), name);
+        this.transform.FindChild("Image").GetComponent<Image>().sprite = StatsManager.Instance.GetSprite("Ico" + name);
+    }
 }
 
 namespace UnityEngine.EventSystems
