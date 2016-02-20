@@ -12,6 +12,10 @@ public class StatsManager : Singleton<StatsManager>
     // STATS
     private List<Stat> _heroStats = new List<Stat>();
 
+    // WEAPONS
+    private List<Weapon> _meleeWeapons = new List<Weapon>();
+    private List<Weapon> _rangedWeapons = new List<Weapon>();
+
     // Use this for initialization
     void Start()
     {
@@ -32,8 +36,16 @@ public class StatsManager : Singleton<StatsManager>
         this._heroStats.Add(new Stat("BulletSpeed", 5f, 30f, 0.5f, 1, 1));
         this._heroStats.Add(new Stat("MagSize", 5, 100, 1, 1, 1));
         this._heroStats.Add(new Stat("ReloadTime", 2f, -0.5f, -0.05f, 1, 1));
-        
-        
+
+        // add melee weapons
+        this._meleeWeapons.Add(new Weapon("Fists", 0.5f, 2.5f, 0.25f, 1, 1));
+        this._meleeWeapons.Add(new Weapon("Brass Knuckles", 1, 5, 0.25f, 1, 1));
+        this._meleeWeapons.Add(new Weapon("Baseball Bat", 1, 10, 0.5f, 1, 1));
+
+        // add ranged weapons
+        this._rangedWeapons.Add(new Weapon("Stone", 0.5f, 2.5f, 0.25f, 1, 1));
+        this._rangedWeapons.Add(new Weapon("Spicked Ball", 1, 5, 0.25f, 1, 1));
+
         //
         this._moneyText = GameObject.Find("MoneyLabel").GetComponent<Text>();
         this.UpdateAllLabels();
@@ -45,11 +57,6 @@ public class StatsManager : Singleton<StatsManager>
 		
     }
 
-    public void CreateStat()
-    {
-
-    }
-
     public float getMoney()
     {
         return this._money;
@@ -58,6 +65,24 @@ public class StatsManager : Singleton<StatsManager>
     public Stat GetStat(string name)
     {
         foreach (Stat s in this._heroStats)
+            if (s.GetName() == name)
+                return s;
+
+        return null;
+    }
+
+    public Weapon GetMeleeWeapon(string name)
+    {
+        foreach (Weapon s in this._meleeWeapons)
+            if (s.GetName() == name)
+                return s;
+
+        return null;
+    }
+
+    public Weapon GetRangedWeapon(string name)
+    {
+        foreach (Weapon s in this._rangedWeapons)
             if (s.GetName() == name)
                 return s;
 
@@ -106,4 +131,6 @@ public class StatsManager : Singleton<StatsManager>
     }
 
     public List<Stat> GetStats() { return this._heroStats; }
+    public List<Weapon> GetMeleeWeapons() { return this._meleeWeapons; }
+    public List<Weapon> GetRangedWeapons() { return this._rangedWeapons; }
 }

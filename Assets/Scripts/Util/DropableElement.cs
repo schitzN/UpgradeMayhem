@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IDropHandler
+public class DropableElement : MonoBehaviour, IDropHandler
 {
     public GameObject item
     {
@@ -20,7 +20,7 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         if (!item)
         {
-            DragHandeler.itemBeingDragged.transform.SetParent(transform);
+            DragHelper.itemBeingDragged.transform.SetParent(transform);
             ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.HasChanged());
         }
     }

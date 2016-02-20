@@ -42,8 +42,8 @@ public class TabsManager : Singleton<TabsManager> {
         switch(name)
         {
             case "Hero":
-                GameObject cont = this.CreateUIElement("Container" + name, "UI/Content4Columns", this._contentContainer.transform);
-                Transform content = cont.transform.FindChild("Viewport/Content");
+                GameObject cont = this.CreateUIElement("Container" + name, "UI/Content2ColArmory", this._contentContainer.transform);
+                Transform content = cont.transform.FindChild("ScrollerLeft/Viewport/Content");
 
                 for(int i = 0; i < StatsManager.Instance.GetStats().Count; i++)
                 {
@@ -52,7 +52,27 @@ public class TabsManager : Singleton<TabsManager> {
                     ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetStats()[i].GetCost() +"";
                     ele.transform.FindChild("Button").GetComponent<Button>().onClick.AddListener(delegate { StatsManager.Instance.UpgradeStat(ele.name); });
                 }
-                //cont.transform.FindChild("Panel1")
+                break;
+            case "Weapons":
+                GameObject cont2 = this.CreateUIElement("Container" + name, "UI/ContentColCol2Col", this._contentContainer.transform);
+
+                Transform contentMelee = cont2.transform.FindChild("Scroller0/Viewport/Content");
+
+                for (int i = 0; i < StatsManager.Instance.GetMeleeWeapons().Count; i++)
+                {
+                    GameObject ele = this.CreateUIElement(StatsManager.Instance.GetMeleeWeapons()[i].GetName(), "UI/ElementWeapons", contentMelee.FindChild("Panel0"));
+                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetMeleeWeapons()[i].GetName() + ": " + StatsManager.Instance.GetMeleeWeapons()[i].GetCur();
+                    ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetMeleeWeapons()[i].GetCost() + "";
+                }
+
+                Transform contentRanged = cont2.transform.FindChild("Scroller1/Viewport/Content");
+
+                for (int i = 0; i < StatsManager.Instance.GetRangedWeapons().Count; i++)
+                {
+                    GameObject ele = this.CreateUIElement(StatsManager.Instance.GetRangedWeapons()[i].GetName(), "UI/ElementWeapons", contentRanged.FindChild("Panel0"));
+                    ele.transform.FindChild("Label").GetComponent<Text>().text = StatsManager.Instance.GetRangedWeapons()[i].GetName() + ": " + StatsManager.Instance.GetRangedWeapons()[i].GetCur();
+                    ele.transform.FindChild("Button/BtnText").GetComponent<Text>().text = StatsManager.Instance.GetRangedWeapons()[i].GetCost() + "";
+                }
                 break;
             default:
                 break;
